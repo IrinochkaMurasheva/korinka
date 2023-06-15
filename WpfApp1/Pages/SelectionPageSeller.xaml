@@ -1,0 +1,23 @@
+﻿<Page x:Class="WpfApp1.Pages.SelectionPageSeller"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SelectionPageSeller">
+
+    <Grid>
+        <Button Name="Organization" Content="Карточка организации" HorizontalAlignment="Left" Margin="129,50,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="EditProduct" Content="Изменить товар" HorizontalAlignment="Left" Margin="520,50,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="AddProduct" Content="Добавить товар" HorizontalAlignment="Left" Margin="129,150,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="remains" Content="Просмотр остатков" HorizontalAlignment="Left" Margin="520,150,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="SalesStatistic" Content="Статистика продаж" HorizontalAlignment="Left" Margin="129,250,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="Orders" Content="Заказы" HorizontalAlignment="Left" Margin="520,250,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="AddServices" Content="Добавить услуги" HorizontalAlignment="Left" Margin="129,350,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="EditServices" Content="Изменить услуги" HorizontalAlignment="Left" Margin="520,350,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="Exit" Content="Выход" HorizontalAlignment="Left" Margin="378,419,0,0" VerticalAlignment="Top" Click="Exit_Click"/>
+
+    </Grid>
+</Page>
