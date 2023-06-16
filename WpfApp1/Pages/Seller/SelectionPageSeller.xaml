@@ -13,7 +13,7 @@
         <Button Name="EditProduct" Content="Изменить товар" HorizontalAlignment="Left" Margin="520,50,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="EditProduct_Click"/>
         <Button Name="AddProduct" Content="Добавить товар" HorizontalAlignment="Left" Margin="129,150,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="AddProduct_Click"/>
         <Button Name="remains" Content="Просмотр остатков" HorizontalAlignment="Left" Margin="520,150,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="remains_Click"/>
-        <Button Name="SalesStatistic" Content="Статистика продаж" HorizontalAlignment="Left" Margin="129,250,0,0" VerticalAlignment="Top" Height="50" Width="160"/>
+        <Button Name="SalesStatistic" Content="Статистика продаж" HorizontalAlignment="Left" Margin="129,250,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="SalesStatistic_Click"/>
         <Button Name="Orders" Content="Заказы" HorizontalAlignment="Left" Margin="520,250,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="Orders_Click"/>
         <Button Name="AddServices" Content="Добавить услуги" HorizontalAlignment="Left" Margin="129,350,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="AddServices_Click"/>
         <Button Name="EditServices" Content="Изменить услуги" HorizontalAlignment="Left" Margin="520,350,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="EditServices_Click"/>

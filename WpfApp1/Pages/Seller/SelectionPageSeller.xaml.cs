@@ -69,5 +69,10 @@ namespace WpfApp1.Pages
         {
             NavigationService.Navigate(new AddProduct(_dBSession));
         }
+
+        private void SalesStatistic_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SalesStatistic(_dBSession));
+        }
     }
 }

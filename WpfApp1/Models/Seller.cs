@@ -10,5 +10,6 @@ namespace WpfApp1.Models
     {
         public string INN { get; set; }
         public string OGRN { get; set; }
+        public List<Product> Products { get; set; }
     }
 }
