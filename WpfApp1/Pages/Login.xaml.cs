@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 using WpfApp1.Pages;
 
 namespace WpfApp1.Pages
@@ -21,8 +22,10 @@ namespace WpfApp1.Pages
     /// </summary>
     public partial class Login : Page
     {
-        public Login()
+        readonly DBSession _dBSession;
+        public Login(DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
 
         }
@@ -31,11 +34,11 @@ namespace WpfApp1.Pages
         {
             if (BoxLogin.Text == "Buyer")
             {
-                NavigationService.Navigate(new SelectionPageBuyer());
+                NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
             }
             else if (BoxLogin.Text == "Seller")
             {
-                NavigationService.Navigate(new SelectionPageSeller());
+                NavigationService.Navigate(new SelectionPageSeller(_dBSession));
             }
             else
                 MessageBox.Show("Нет пользователя!");

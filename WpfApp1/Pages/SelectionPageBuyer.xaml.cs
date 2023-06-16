@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 
 namespace WpfApp1.Pages
 {
@@ -19,8 +20,10 @@ namespace WpfApp1.Pages
     /// </summary>
     public partial class SelectionPageBuyer : Page
     {
-        public SelectionPageBuyer()
+        readonly DBSession _dBSession;
+        public SelectionPageBuyer(DBSession dBSession)
         {
+            _dBSession=dBSession;
             InitializeComponent();
         }
 
