@@ -19,7 +19,7 @@
         <TextBox Name="DescriptionProduct" HorizontalAlignment="Center" Margin="0,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
         <Label Content="Путь к картинке" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Width="100" />
         <TextBox x:Name="ProductPath" HorizontalAlignment="Center" Margin="0,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <Button Name="Save" Content="Сохранить" HorizontalAlignment="Left" Margin="220,350,0,0" VerticalAlignment="Top" Width="65" />
+        <Button Name="Save" Content="Сохранить" HorizontalAlignment="Left" Margin="220,350,0,0" VerticalAlignment="Top" Width="65" Click="Save_Click" />
         <Button Name="Return" Content="Назад" HorizontalAlignment="Left" Margin="520,350,0,0" VerticalAlignment="Top" Width="65" Click="Return_Click"/>
 
     </Grid>

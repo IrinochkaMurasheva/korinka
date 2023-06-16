@@ -33,5 +33,10 @@ namespace WpfApp1.Pages
         {
             NavigationService.Navigate(new SelectionPageSeller(_dBSession));
         }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
