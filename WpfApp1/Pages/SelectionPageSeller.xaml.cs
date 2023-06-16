@@ -43,5 +43,10 @@ namespace WpfApp1.Pages
         {
             NavigationService.Navigate(new AddProduct(_dBSession));
         }
+
+        private void AddServices_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
