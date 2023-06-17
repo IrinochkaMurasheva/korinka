@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.Models;
+using WpfApp1.Pages.Buyer;
 
 namespace WpfApp1.Pages
 {
@@ -29,22 +30,32 @@ namespace WpfApp1.Pages
 
         private void Services_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Service(_dBSession));
         }
 
         private void Basket_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Basket(_dBSession));
         }
 
         private void Orders_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Order(_dBSession));
         }
 
         private void Produc_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new Product(_dBSession));
+        }
 
+        private void StatisticPurchase_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new StatisticPurchase(_dBSession));
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Login(_dBSession));
         }
     }
 }

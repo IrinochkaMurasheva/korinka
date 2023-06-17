@@ -8,8 +8,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Products">
-
-    <ListView x:Name="listUsers" Margin="10">
+    <Grid>
+    <ListView x:Name="listUsers" Margin="10,10,10,48" Height="NaN">
         <ListView.View>
             <GridView>
                 <GridViewColumn Header="Фото" Width="80">
@@ -31,7 +31,10 @@
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
+               
             </GridView>
         </ListView.View>
     </ListView>
+    <Button Name="Return" Content="Выход" HorizontalAlignment="Center" Height="38" Margin="0,402,0,0" VerticalAlignment="Top" Width="780" Click="Return_Click"/>
+    </Grid>
 </Page>

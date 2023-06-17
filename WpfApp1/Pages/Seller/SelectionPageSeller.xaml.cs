@@ -36,7 +36,6 @@ namespace WpfApp1.Pages
 
         private void Organization_Click(object sender, RoutedEventArgs e)
         {
-
             NavigationService.Navigate(new OrganizationCard(_dBSession));
         }
 

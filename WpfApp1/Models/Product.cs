@@ -15,5 +15,7 @@ namespace WpfApp1.Models
         public int Availability { get; set; }
         public int BuyerId { get; set; }
         public string Path { get; set; }
+        public bool Visibly { get; set; }
+
     }
 }
