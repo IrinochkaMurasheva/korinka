@@ -30,7 +30,7 @@ namespace WpfApp1.Pages
 
         private void Services_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Service(_dBSession));
+            NavigationService.Navigate(new Services(_dBSession));
         }
 
         private void Basket_Click(object sender, RoutedEventArgs e)
@@ -40,12 +40,12 @@ namespace WpfApp1.Pages
 
         private void Orders_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Order(_dBSession));
+            NavigationService.Navigate(new Orders(_dBSession));
         }
 
         private void Produc_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Product(_dBSession));
+            NavigationService.Navigate(new Products(_dBSession));
         }
 
         private void StatisticPurchase_Click(object sender, RoutedEventArgs e)

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 
 namespace WpfApp1.Pages
 {
@@ -20,11 +21,23 @@ namespace WpfApp1.Pages
     /// </summary>
     public partial class Products : Page
     {
-        public Products()
+        readonly DBSession _dBSession;
+        public Products(DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
         }
         public void AddToBasket(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
+
+        }
+        public void EditCategory(object sender, RoutedEventArgs e)
         {
 
         }

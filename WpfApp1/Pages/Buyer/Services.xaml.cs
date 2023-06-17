@@ -12,17 +12,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 
 namespace WpfApp1.Pages.Buyer
 {
     /// <summary>
     /// Логика взаимодействия для Service.xaml
     /// </summary>
-    public partial class Service : Page
+    public partial class Services : Page
     {
-        public Service()
+        readonly DBSession _dBSession;
+        public Services(DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
+
         }
     }
 }

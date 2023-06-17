@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 
 namespace WpfApp1.Pages.Buyer
 {
@@ -20,9 +21,17 @@ namespace WpfApp1.Pages.Buyer
     /// </summary>
     public partial class Orders : Page
     {
-        public Orders()
+        readonly DBSession _dBSession;
+        public Orders(DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
+
         }
     }
 }

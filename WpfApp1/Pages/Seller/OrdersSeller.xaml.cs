@@ -24,7 +24,14 @@ namespace WpfApp1.Pages
         readonly DBSession _dBSession;
         public OrdersSeller(DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
+
         }
     }
 }

@@ -21,8 +21,10 @@ namespace WpfApp1.Pages.Buyer
     /// </summary>
     public partial class StatisticPurchase : Page
     {
-        public StatisticPurchase()
+        readonly DBSession _dBSession;
+        public StatisticPurchase(DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
         }
 

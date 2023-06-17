@@ -14,27 +14,29 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.Models;
 
-namespace WpfApp1.Pages.Buyer
+namespace WpfApp1.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для Basket.xaml
+    /// Логика взаимодействия для ProductsAll.xaml
     /// </summary>
-    public partial class Basket : Page
+    public partial class ProductsAll : Page
     {
-        readonly DBSession _dBSession;
-        public Basket(DBSession dBSession)
+        DBSession _dBSession;
+
+        public ProductsAll(DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
         }
 
-        private void placeOrder_Click(object sender, RoutedEventArgs e)
+        private void listUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
+            NavigationService.Navigate(new AdminSelectionPage(_dBSession));
         }
     }
 }

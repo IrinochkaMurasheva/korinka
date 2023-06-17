@@ -21,10 +21,11 @@
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
-                <GridViewColumn Header="Товар" Width="350" DisplayMemberBinding="{Binding name}"/>
+                <GridViewColumn Header="Товар" Width="250" DisplayMemberBinding="{Binding name}"/>
+                <GridViewColumn Header="Категория" Width="100" DisplayMemberBinding="{Binding category}"/>
                 <GridViewColumn Header="Кол-во" Width="100" DisplayMemberBinding="{Binding count}"/>
                 <GridViewColumn Header="Цена" Width="100" DisplayMemberBinding="{Binding price}"/>
-                <GridViewColumn Header="Положить в карзину" Width="150">
+                <GridViewColumn Header="Скрыть позицию" Width="150">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Edit" Click="EditCategory" CommandParameter="{Binding Id}"/>
