@@ -12,27 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 
-namespace WpfApp1.Pages.Seller
+namespace WpfApp1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для EditProduct.xaml
+    /// Логика взаимодействия для RegisteredSeller.xaml
     /// </summary>
-    public partial class EditProduct : Page
+    public partial class RegisteredSeller : Page
     {
-        public EditProduct()
+        DBSession _dBSession;
+        public RegisteredSeller( DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            NavigationService.Navigate(new Login(_dBSession));
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Login(_dBSession));
         }
     }
 }

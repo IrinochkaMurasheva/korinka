@@ -16,16 +16,20 @@ namespace WpfApp1.Models
 
         public DBSession(DbContextOptions<DBSession> options) : base(options)
         {
-
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
         }
+        public DbSet<Admin> admins { get; set; }
         public DbSet<Buyer> buyers { get; set; }
         public DbSet<Seller> sellers { get; set; }
         public DbSet<Order> orders { get; set; }
         public DbSet<Product> products { get; set; }
-
+        public DbSet<Service> services { get; set; }
+        public DbSet<Status> status { get; set; }
+        public DbSet<Category> categories { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=ms-sql-10.in-solve.ru; Database=1gb_slaynkassa; uid=1gb_slayndev; pwd=86443ad5dgh;Encrypt=False;TrustServerCertificate=False;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=master2;Trusted_Connection=True");
         }
 
 

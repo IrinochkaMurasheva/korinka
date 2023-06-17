@@ -38,5 +38,10 @@ namespace WpfApp1.Pages.Admin
         {
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
         }
+
+        private void EditCategory(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -34,5 +34,15 @@ namespace WpfApp1.Pages.Admin
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
 
         }
+        private void listUsers_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AdminSelectionPage(_dBSession));
+
+        }
+
+        private void EditCategory(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

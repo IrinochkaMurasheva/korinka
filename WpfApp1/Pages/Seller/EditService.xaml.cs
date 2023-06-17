@@ -24,5 +24,15 @@ namespace WpfApp1.Pages.Seller
         {
             InitializeComponent();
         }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

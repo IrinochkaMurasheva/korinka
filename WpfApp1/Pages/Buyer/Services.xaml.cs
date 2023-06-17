@@ -33,5 +33,10 @@ namespace WpfApp1.Pages.Buyer
             NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
 
         }
+
+        private void EditCategory(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -27,5 +27,10 @@ namespace WpfApp1.Pages.Seller
             _dBSession = dBSession;
             InitializeComponent();
         }
+
+        private void EditCategory(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
