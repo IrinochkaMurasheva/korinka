@@ -32,7 +32,16 @@ namespace WpfApp1.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-
+            Models.Buyer buyer = new Models.Buyer()
+            {
+                Surname = Surname.Text,
+                Name = Name.Text,
+                Patronymic = Patronymic.Text,
+                Password = Password.Text,
+                Phone = Phone.Text
+            };
+            _dBSession.buyers.Add(buyer);
+            _dBSession.SaveChanges();
             NavigationService.Navigate(new Login(_dBSession));
         }
 
