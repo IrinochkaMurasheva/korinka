@@ -26,6 +26,7 @@ namespace WpfApp1.Pages.Admin
         public AdminSelectionPage(DBSession dBSession)
         {
             _dBSession = dBSession;
+
             InitializeComponent();
         }
 
@@ -63,5 +64,6 @@ namespace WpfApp1.Pages.Admin
         {
             NavigationService.Navigate(new Category(_dBSession));
         }
+       
     }
 }

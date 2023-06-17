@@ -22,7 +22,7 @@
         <Button Name="Save" Content="Сохранить" HorizontalAlignment="Left" Margin="225,391,0,0" VerticalAlignment="Top" Width="65" Click="Save_Click" />
         <Button Name="Return" Content="Назад" HorizontalAlignment="Left" Margin="525,391,0,0" VerticalAlignment="Top" Width="65" Click="Return_Click"/>
         <Label Content="Номер телефона" HorizontalAlignment="Center" Margin="0,330,0,0" VerticalAlignment="Top" Width="110" />
-        <TextBox x:Name="Phone" HorizontalAlignment="Center" Margin="0,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208"/>
+        <TextBox Name="Phone" HorizontalAlignment="Center" Margin="0,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208"/>
 
     </Grid>
 </Page>

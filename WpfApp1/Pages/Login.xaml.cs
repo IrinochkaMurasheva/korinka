@@ -57,9 +57,12 @@ namespace WpfApp1.Pages
                 else
                     MessageBox.Show("Неправильный пароль!");
             }
-            else if (admin!=null&BoxPassword.Text==admin.Password)
+            else if (admin != null)
             {
-                NavigationService.Navigate(new AdminSelectionPage(_dBSession));
+                if(BoxPassword.Text == admin.Password)
+                {
+                    NavigationService.Navigate(new AdminSelectionPage(_dBSession));
+                }
             }
             else
                 MessageBox.Show("Нет пользователя!");

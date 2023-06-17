@@ -30,7 +30,16 @@ namespace WpfApp1.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            
+            Models.Seller seller = new Models.Seller()
+            {
+                INN = OrganizationINN.Text,
+                OGRN = OrganizationOGRN.Text,
+                Name = OrganizationName.Text,
+                Phone=Phone.Text,
+                Password=OrganizationPassword.Text
+            };
+            _dBSession.sellers.Add(seller);
+            _dBSession.SaveChanges();
             NavigationService.Navigate(new Login(_dBSession));
         }
 
