@@ -37,7 +37,21 @@ namespace WpfApp1.Pages.Admin
         }
         public void ListAddInfo()
         {
-
+            var ordersSum = _dBSession.orders.Where(p => p.status.Name == "Отмена").ToList();
+            int sum = new int();
+            foreach (var order in ordersSum)
+            {
+                if (order.Sum != null)
+                { sum += order.Sum; }
+            }
+            AllOrders.Content = _dBSession.orders.Count();
+            CanceledOrders.Content = _dBSession.orders.Where(p => p.status.Name == "Отмена").Count();
+            ComplitedOrders.Content = _dBSession.orders.Where(p => p.status.Name == "Выполнен").Count();
+            AllSum.Content = sum;
+            PosInMod.Content =_dBSession.products.Where(p=>p.Moderation==false).Count()+ _dBSession.services.Where(p => p.Moderation == false).Count();
+            CountSeller.Content=_dBSession.sellers.Count();
+            CountBuyer.Content=_dBSession.buyers.Count();
+            AllPositions.Content= _dBSession.products.Count() + _dBSession.services.Count();
         }
     }
 }

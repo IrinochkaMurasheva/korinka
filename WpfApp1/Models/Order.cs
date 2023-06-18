@@ -17,6 +17,6 @@ namespace WpfApp1.Models
         public Status status { get; set; }
         public List<Product>? products { get; set; }
         public List<Service>? services { get; set; }
-        public int? Sum { get; set; }
+        public int Sum { get; set; }
     }
 }
