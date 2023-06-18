@@ -52,7 +52,7 @@ namespace WpfApp1.Pages
             {
                 if (BoxPassword.Text == seller.Password)
                 {
-                    NavigationService.Navigate(new SelectionPageSeller(_dBSession));
+                    NavigationService.Navigate(new SelectionPageSeller(_dBSession,seller));
                 }
                 else
                     MessageBox.Show("Неправильный пароль!");
@@ -75,40 +75,43 @@ namespace WpfApp1.Pages
 
         public void CheckBD()
         {
-            List<string> list = new List<string>();
-            using (StreamReader reader = new StreamReader("Settings.txt"))
+            if (_dBSession!=null)
             {
-                while(!reader.EndOfStream)
-                { 
-                list.Add(reader.ReadLine());
-                }
-            }
-            var adminDB = _dBSession.admins.ToList();
-            if (adminDB.Count() ==0)
-            {
-
-                Models.Admin admin = new Models.Admin()
+                List<string> list = new List<string>();
+                using (StreamReader reader = new StreamReader("Settings.txt"))
                 {
-                    Name = list[0],
-                    Login = list[1],
-                    Password = list[2]
-                };
-                _dBSession.admins.Add(admin);
-                _dBSession.SaveChanges();
-
-            }
-            var statusDB = _dBSession.status.ToList();
-            if (statusDB.Count() == 0)
-            {
-                for (int i = 3; i < 6; i++)
-                {
-                    Status status = new Status()
+                    while (!reader.EndOfStream)
                     {
-                        Name = list[3]
-                    };
-                    _dBSession.status.Add(status);
+                        list.Add(reader.ReadLine());
+                    }
                 }
-                _dBSession.SaveChanges();
+                var adminDB = _dBSession.admins.ToList();
+                if (adminDB.Count() == 0)
+                {
+
+                    Models.Admin admin = new Models.Admin()
+                    {
+                        Name = list[0],
+                        Login = list[1],
+                        Password = list[2]
+                    };
+                    _dBSession.admins.Add(admin);
+                    _dBSession.SaveChanges();
+
+                }
+                var statusDB = _dBSession.status.ToList();
+                if (statusDB.Count() == 0)
+                {
+                    for (int i = 3; i < 6; i++)
+                    {
+                        Status status = new Status()
+                        {
+                            Name = list[3]
+                        };
+                        _dBSession.status.Add(status);
+                    }
+                    _dBSession.SaveChanges();
+                }
             }
         }
     }

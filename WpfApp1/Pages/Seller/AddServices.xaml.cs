@@ -21,10 +21,13 @@ namespace WpfApp1.Pages
     /// </summary>
     public partial class AddServices : Page
     {
-        public DBSession _dBSession;
-        public AddServices(DBSession dBSession)
+        public DBSession _dBSession; 
+        readonly Models.Seller _seller;
+
+        public AddServices(DBSession dBSession,Models.Seller seller)
         {
             _dBSession = dBSession;
+            _seller = seller;
             InitializeComponent();
         }
 
@@ -35,7 +38,7 @@ namespace WpfApp1.Pages
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SelectionPageSeller(_dBSession));
+            NavigationService.Navigate(new SelectionPageSeller(_dBSession,_seller));
         }
     }
 }

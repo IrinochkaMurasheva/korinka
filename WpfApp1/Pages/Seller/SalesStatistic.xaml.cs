@@ -22,15 +22,19 @@ namespace WpfApp1.Pages.Seller
     public partial class SalesStatistic : Page
     {
         readonly DBSession _dBSession;
-        public SalesStatistic(DBSession dBSession)
+        readonly Models.Seller _seller;
+
+        public SalesStatistic(DBSession dBSession, Models.Seller seller)
         {
             _dBSession = dBSession;
             InitializeComponent();
+            _seller = seller;
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SelectionPageSeller(_dBSession));
+            NavigationService.Navigate(new SelectionPageSeller(_dBSession, _seller));
         }
+
     }
 }

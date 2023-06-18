@@ -35,7 +35,7 @@ namespace WpfApp1.Pages
                 INN = OrganizationINN.Text,
                 OGRN = OrganizationOGRN.Text,
                 Name = OrganizationName.Text,
-                Phone=Phone.Text,
+                Phone=PhoneNumber.Text,
                 Password=OrganizationPassword.Text
             };
             _dBSession.sellers.Add(seller);

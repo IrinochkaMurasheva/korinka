@@ -16,8 +16,7 @@ namespace WpfApp1.Models
 
         public DBSession(DbContextOptions<DBSession> options) : base(options)
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+            
         }
         public DbSet<Admin> admins { get; set; }
         public DbSet<Buyer> buyers { get; set; }

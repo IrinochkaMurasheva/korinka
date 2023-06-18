@@ -16,7 +16,7 @@ namespace WpfApp1.Models
         public int BuyerId { get; set; }
         public string? Path { get; set; }
         public bool Visibly { get; set; }
-        public int? CategoryId { get; set; }
+        public Category Category { get; set; }
         public bool Moderation { get; set; }
     }
 }

@@ -22,10 +22,13 @@ namespace WpfApp1.Pages
     public partial class Remains : Page
     {
         readonly DBSession _dBSession;
-        public Remains(DBSession dBSession)
+        readonly Models.Seller _seller;
+
+        public Remains(DBSession dBSession, Models.Seller seller)
         {
             _dBSession = dBSession;
             InitializeComponent();
+            _seller = seller;
         }
     }
 }

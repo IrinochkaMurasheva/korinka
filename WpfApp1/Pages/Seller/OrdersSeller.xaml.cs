@@ -22,15 +22,18 @@ namespace WpfApp1.Pages
     public partial class OrdersSeller : Page
     {
         readonly DBSession _dBSession;
-        public OrdersSeller(DBSession dBSession)
+        readonly Models.Seller _seller;
+
+        public OrdersSeller(DBSession dBSession, Models.Seller seller)
         {
             _dBSession = dBSession;
             InitializeComponent();
+            _seller = seller;
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
+            NavigationService.Navigate(new SelectionPageSeller(_dBSession,_seller));
 
         }
     }

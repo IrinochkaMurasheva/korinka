@@ -10,7 +10,6 @@ namespace WpfApp1.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Service>? services { get; set; }
-        public List<Product> Products { get; set; }
+        public bool Visebly { get; set; }
     }
 }

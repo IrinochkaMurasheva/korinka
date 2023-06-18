@@ -9,14 +9,21 @@
       Title="Category">
 
     <Grid>
-        <ListView x:Name="listUsers" Margin="10,10,349,53" Height="NaN" Width="NaN">
+        <ListView x:Name="listUsers" Margin="10,10,349,53" Height="NaN" Width="NaN" SelectionChanged="listUsers_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Категория" Width="290" DisplayMemberBinding="{Binding name}"/>
+                    <GridViewColumn Header="Категория" Width="290" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Видимость">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                                <CheckBox Margin="5, 0" IsChecked="{Binding Visebly}" ClickMode="Press" IsEnabled="False" />
+                            </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn Header="Удалить категорию" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Edit" Click="EditCategory" CommandParameter="{Binding Id}"/>
+                                <Button Content="удалить" Click="EditCategory"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

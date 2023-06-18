@@ -22,10 +22,13 @@ namespace WpfApp1.Pages.Seller
     public partial class EditServices : Page
     {
         readonly DBSession _dBSession;
-        public EditServices(DBSession dBSession)
+        readonly Models.Seller _seller;
+
+        public EditServices(DBSession dBSession, Models.Seller seller)
         {
             _dBSession = dBSession;
             InitializeComponent();
+            _seller = seller;
         }
 
         private void EditCategory(object sender, RoutedEventArgs e)
