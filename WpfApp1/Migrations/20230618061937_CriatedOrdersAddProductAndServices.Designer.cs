@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WpfApp1.Models;
 
@@ -11,9 +12,11 @@ using WpfApp1.Models;
 namespace WpfApp1.Migrations
 {
     [DbContext(typeof(DBSession))]
-    partial class DBSessionModelSnapshot : ModelSnapshot
+    [Migration("20230618061937_CriatedOrdersAddProductAndServices")]
+    partial class CriatedOrdersAddProductAndServices
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,17 +255,12 @@ namespace WpfApp1.Migrations
                     b.Property<long>("Price")
                         .HasColumnType("bigint");
 
-                    b.Property<int?>("SellerId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Visibly")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Orderid");
-
-                    b.HasIndex("SellerId");
 
                     b.ToTable("services");
                 });
@@ -323,10 +321,6 @@ namespace WpfApp1.Migrations
                     b.HasOne("WpfApp1.Models.Order", null)
                         .WithMany("services")
                         .HasForeignKey("Orderid");
-
-                    b.HasOne("WpfApp1.Models.Seller", null)
-                        .WithMany("Services")
-                        .HasForeignKey("SellerId");
                 });
 
             modelBuilder.Entity("WpfApp1.Models.Buyer", b =>
@@ -344,8 +338,6 @@ namespace WpfApp1.Migrations
             modelBuilder.Entity("WpfApp1.Models.Seller", b =>
                 {
                     b.Navigation("Products");
-
-                    b.Navigation("Services");
                 });
 #pragma warning restore 612, 618
         }

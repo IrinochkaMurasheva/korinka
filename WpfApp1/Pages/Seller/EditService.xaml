@@ -6,19 +6,15 @@
       xmlns:local="clr-namespace:WpfApp1.Pages.Seller"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EditService">
+      Title="EditProduct">
 
     <Grid>
-        <Label Content="Название товара" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="110" />
-        <TextBox Name="ProductName" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <Label Content="Количество товара" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="115" />
-        <TextBox Name="CountProduct" HorizontalAlignment="Center" Margin="0,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <Label Content="Цена" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="40" />
-        <TextBox Name="ProductPrice" HorizontalAlignment="Center" Margin="0,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <Label Content="Описание" HorizontalAlignment="Center" Margin="0,210,0,0" VerticalAlignment="Top" Width="65" />
-        <TextBox Name="DescriptionProduct" HorizontalAlignment="Center" Margin="0,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <Label Content="Путь к картинке" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Width="100" />
-        <TextBox x:Name="ProductPath" HorizontalAlignment="Center" Margin="0,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Название услуги" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="110" />
+        <TextBox Name="ServiceName" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Цена" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="40" />
+        <TextBox Name="ServicePrice" HorizontalAlignment="Center" Margin="0,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Описание" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="65" />
+        <TextBox Name="DescriptionService" HorizontalAlignment="Center" Margin="0,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
         <Button Name="Save" Content="Сохранить" HorizontalAlignment="Left" Margin="220,350,0,0" VerticalAlignment="Top" Width="65" Click="Save_Click" />
         <Button Name="Return" Content="Назад" HorizontalAlignment="Left" Margin="520,350,0,0" VerticalAlignment="Top" Width="65" Click="Return_Click"/>
 

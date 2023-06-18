@@ -27,6 +27,7 @@ namespace WpfApp1.Pages.Admin
         {
             _dBSession = dBSession;
             InitializeComponent();
+            ListAddInfo();
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
@@ -41,10 +42,42 @@ namespace WpfApp1.Pages.Admin
         }
         private void EditCategory(object sender, RoutedEventArgs e)
         {
-
+            if (((Button)sender).DataContext is Models.Product produst)
+            {
+                var productListView = (Models.Product)((Button)sender).DataContext;
+                var productDB = _dBSession.products.SingleOrDefault(p => p.Name == productListView.Name);
+                productDB.Moderation = true;
+                _dBSession.SaveChanges();
+                ListAddInfo();
+            }
+            else if(((Button)sender).DataContext is Models.Service services)
+            {
+                var productListView = (Models.Service)((Button)sender).DataContext;
+                var productDB = _dBSession.services.SingleOrDefault(p => p.Name == productListView.Name);
+                productDB.Moderation = true;
+                _dBSession.SaveChanges();
+                ListAddInfo();
+            }
 
         }
-        
+        public void ListAddInfo()
+        {
+
+            if (_dBSession != null)
+            {
+
+                var products = _dBSession.products.Where(p=>p.Moderation==false).ToList();
+                foreach (var product in products)
+                {
+                    listUsers.Items.Add(product);
+                }
+                var services = _dBSession.services.Where(p => p.Moderation == false).ToList();
+                foreach (var service in services)
+                {
+                    listUsers.Items.Add(service);
+                }
+            }
+        }
 
     }
 }

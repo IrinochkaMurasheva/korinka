@@ -25,7 +25,9 @@ namespace WpfApp1.Pages.Admin
 
         public OrdersAll(DBSession dBSession)
         {
+            _dBSession = dBSession;
             InitializeComponent();
+            ListAddInfo();
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
@@ -35,6 +37,18 @@ namespace WpfApp1.Pages.Admin
         private void EditCategory(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
+        }
+        public void ListAddInfo()
+        {
+
+            if (_dBSession != null)
+            {
+                var orders = _dBSession.orders.ToList();
+                foreach (var order in orders)
+                {
+                    listUsers.Items.Add(order);
+                }
+            }
         }
     }
 }

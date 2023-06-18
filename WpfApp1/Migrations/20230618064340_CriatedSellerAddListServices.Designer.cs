@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WpfApp1.Models;
 
@@ -11,9 +12,11 @@ using WpfApp1.Models;
 namespace WpfApp1.Migrations
 {
     [DbContext(typeof(DBSession))]
-    partial class DBSessionModelSnapshot : ModelSnapshot
+    [Migration("20230618064340_CriatedSellerAddListServices")]
+    partial class CriatedSellerAddListServices
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

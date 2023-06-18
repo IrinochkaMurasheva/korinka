@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfApp1.Pages.Seller
 {
     /// <summary>
-    /// Логика взаимодействия для EditService.xaml
+    /// Логика взаимодействия для EditProduct.xaml
     /// </summary>
-    public partial class EditService : Page
+    public partial class EditProduct : Page
     {
-        public EditService()
+        public EditProduct()
         {
             InitializeComponent();
         }

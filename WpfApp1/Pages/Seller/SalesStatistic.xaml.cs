@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,47 @@ namespace WpfApp1.Pages.Seller
         {
             NavigationService.Navigate(new SelectionPageSeller(_dBSession, _seller));
         }
-
+        public void StatisticLoad()
+        {
+            var services = _seller.Services.ToList();
+            var products = _seller.Products.ToList();
+            var OrdersDBAll= _dBSession.orders.Include(p => p.products).ToList();
+            var ServicesDBAll = _dBSession.orders.Include(p => p.services).ToList();
+            List<Order> orders = new List<Order>(); 
+            foreach(var ordersDB in OrdersDBAll)
+            {
+                foreach (var product in products)
+                {
+                    if (ordersDB.products.Contains(product))
+                    {
+                        if(!orders.Contains(ordersDB))
+                        {
+                            orders.Add(ordersDB);
+                        }
+                    }
+                }
+            }
+            foreach (var servicesDB in ServicesDBAll)
+            {
+                foreach (var service in services)
+                {
+                    if (servicesDB.services.Contains(service))
+                    {
+                        if (!orders.Contains(servicesDB))
+                        {
+                            orders.Add(servicesDB);
+                        }
+                    }
+                }
+            }
+            AllOrders.Content = orders.Count();
+            Complited.Content = orders.Where(p => p.status.Name == "Выполнен").Count();
+            Canceled.Content = orders.Where(p => p.status.Name == "Отмена").Count();
+            ToWork.Content = orders.Where(p => p.status.Name == "В работе").Count(); ;
+            PositionsAll.Content = _seller.Products.Count();
+            ServicesAll.Content = _seller.Services.Count();
+            PositionsModern.Content = _seller.Products.Where(p=>p.Moderation==false);
+            ServicesModern.Content = _seller.Services.Where(p => p.Moderation == false);
+        }
     }
 }

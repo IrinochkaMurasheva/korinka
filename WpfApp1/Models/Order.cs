@@ -15,5 +15,8 @@ namespace WpfApp1.Models
         public DateTime createdOrdersDate { get; set; }
         public DateTime? dileveryDate { get; set; }
         public Status status { get; set; }
+        public List<Product>? products { get; set; }
+        public List<Service>? services { get; set; }
+        public int? Sum { get; set; }
     }
 }

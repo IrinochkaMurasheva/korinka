@@ -27,11 +27,16 @@ namespace WpfApp1.Pages.Admin
         {
             _dBSession = dBSession;
             InitializeComponent();
+            ListAddInfo();
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
+
+        }
+        public void ListAddInfo()
+        {
 
         }
     }

@@ -27,6 +27,7 @@ namespace WpfApp1.Pages.Admin
         {
             _dBSession = dBSession;
             InitializeComponent();
+            ListAddInfo();
         }
 
         private void listUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -41,7 +42,28 @@ namespace WpfApp1.Pages.Admin
 
         private void EditCategory(object sender, RoutedEventArgs e)
         {
+            if (((Button)sender).DataContext is Models.Product produst)
+            {
+                var productListView = (Models.Product)((Button)sender).DataContext;
+                var productsDb = _dBSession.products.SingleOrDefault(p => p.Name == productListView.Name);
+                if (productsDb.Visibly = true)
+                { productsDb.Visibly = false; }
+                else { productsDb.Visibly = false; }
+                _dBSession.SaveChanges();
+                ListAddInfo();
+            }
+        }
+        public void ListAddInfo()
+        {
 
+            if (_dBSession != null)
+            {
+                var products = _dBSession.products.ToList();
+                foreach (var product in products)
+                {
+                    listUsers.Items.Add(product);
+                }
+            }
         }
     }
 }
