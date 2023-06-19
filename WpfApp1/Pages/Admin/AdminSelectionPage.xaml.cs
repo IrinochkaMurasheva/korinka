@@ -29,37 +29,37 @@ namespace WpfApp1.Pages.Admin
 
             InitializeComponent();
         }
-
+        //Переход к странице позицый
         private void Produc_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ProductsAll(_dBSession));
         }
-
+        //переход к странице услуг
         private void Services_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ServicesAll(_dBSession));
         }
-
+        //переход к странице заказов
         private void Orders_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new OrdersAll(_dBSession));
         }
-
+        //переход к странице позицый на модерации
         private void Basket_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new PositionsMod(_dBSession));
         }
-
+        //переход к странице статистики
         private void StatisticPurchase_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Statistic(_dBSession));
         }
-
+        //Выход из страницы
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Login(_dBSession));
         }
-
+        //Переход на страницу создания категорий
         private void Category_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Category(_dBSession));

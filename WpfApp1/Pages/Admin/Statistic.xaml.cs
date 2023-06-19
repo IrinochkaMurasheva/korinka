@@ -17,7 +17,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для Statistic.xaml
+    /// Статистика администратора по клиентам и заказам и продавцам
     /// </summary>
     public partial class Statistic : Page
     {
@@ -29,12 +29,13 @@ namespace WpfApp1.Pages.Admin
             InitializeComponent();
             ListAddInfo();
         }
-
+        //возврат на предыдущую страницу
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
 
         }
+        //загрузка данных из бд в UI
         public void ListAddInfo()
         {
             var ordersSum = _dBSession.orders.Where(p => p.status.Name == "Отмена").ToList();

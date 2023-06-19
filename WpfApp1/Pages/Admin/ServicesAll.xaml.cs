@@ -17,7 +17,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для ServicesAll.xaml
+    /// Логика взаимодействия для всех услуг
     /// </summary>
     public partial class ServicesAll : Page
     {
@@ -29,7 +29,7 @@ namespace WpfApp1.Pages.Admin
             InitializeComponent();
             ListAddInfo();
         }
-
+        //возврат на предыдущую страницу
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
@@ -37,10 +37,9 @@ namespace WpfApp1.Pages.Admin
         }
         private void listUsers_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AdminSelectionPage(_dBSession));
 
         }
-
+        //Скрыть или вывести услугу при нажатии
         private void EditCategory(object sender, RoutedEventArgs e)
         {
             if (((Button)sender).DataContext is Models.Service produst)
@@ -51,9 +50,10 @@ namespace WpfApp1.Pages.Admin
                 { servicedb.Visibly = false; }
                 else { servicedb.Visibly = false; }
                 _dBSession.SaveChanges();
-                ListAddInfo();
+                NavigationService.Navigate(new ServicesAll(_dBSession));
             }
         }
+        //подгрузка данных из БД
         public void ListAddInfo()
         {
 

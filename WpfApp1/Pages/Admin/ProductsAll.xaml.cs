@@ -17,7 +17,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для ProductsAll.xaml
+    /// Вывод всех позицый
     /// </summary>
     public partial class ProductsAll : Page
     {
@@ -34,12 +34,12 @@ namespace WpfApp1.Pages.Admin
         {
 
         }
-
+        //возврат на предыдущую страницу
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
         }
-
+        //Сделать позицыю видимой для покупателей или нет
         private void EditCategory(object sender, RoutedEventArgs e)
         {
             if (((Button)sender).DataContext is Models.Product produst)
@@ -53,6 +53,7 @@ namespace WpfApp1.Pages.Admin
                 ListAddInfo();
             }
         }
+        //загрузка данных из БД
         public void ListAddInfo()
         {
 

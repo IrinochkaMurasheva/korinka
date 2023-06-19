@@ -17,7 +17,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для orders.xaml
+    /// вывод всех заказов
     /// </summary>
     public partial class OrdersAll : Page
     {
@@ -34,10 +34,17 @@ namespace WpfApp1.Pages.Admin
         {
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
         }
+        //изменение статуса заказа на "Отменен"
         private void EditCategory(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AdminSelectionPage(_dBSession));
+            var categoryListView = (Models.Order)((Button)sender).DataContext;
+            var order = _dBSession.orders.SingleOrDefault(p => p.name == categoryListView.name);
+            var status = _dBSession.status.SingleOrDefault(p => p.Name == "Отмена");
+            order.status = status;
+            _dBSession.SaveChanges();
+            ListAddInfo();
         }
+        //загрузка всех заказов из БД
         public void ListAddInfo()
         {
 

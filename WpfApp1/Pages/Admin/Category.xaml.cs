@@ -17,7 +17,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для Category.xaml
+    /// Добавление и изменение видимости категорий
     /// </summary>
     public partial class Category : Page
     {
@@ -51,6 +51,7 @@ namespace WpfApp1.Pages.Admin
                 NavigationService.Navigate(new Category(_dBSession));
             }
         }
+        //удаление выбранной категории
         private void EditCategory(object sender, RoutedEventArgs e)
         {
             var categoryListView = (Models.Category)((Button)sender).DataContext;
@@ -59,6 +60,7 @@ namespace WpfApp1.Pages.Admin
             _dBSession.SaveChanges();
             ListAddInfo();
         }
+        //подгрузка категорий из БД
         public void ListAddInfo()
         {
             
@@ -71,7 +73,7 @@ namespace WpfApp1.Pages.Admin
                 }
             }
         }
-
+        //изменение видимости категорий
         private void listUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var categoryListView = (Models.Category)listUsers.SelectedItem;

@@ -17,7 +17,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages.Admin
 {
     /// <summary>
-    /// Логика взаимодействия для PositionsMod.xaml
+    /// Страница модераций для товаров
     /// </summary>
     public partial class PositionsMod : Page
     {
@@ -29,7 +29,7 @@ namespace WpfApp1.Pages.Admin
             InitializeComponent();
             ListAddInfo();
         }
-
+        //возврат на предыдущую позицыю
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AdminSelectionPage(_dBSession));
@@ -40,6 +40,7 @@ namespace WpfApp1.Pages.Admin
             
 
         }
+        //Подтверждение позицыы
         private void EditCategory(object sender, RoutedEventArgs e)
         {
             if (((Button)sender).DataContext is Models.Product produst)
@@ -48,7 +49,7 @@ namespace WpfApp1.Pages.Admin
                 var productDB = _dBSession.products.SingleOrDefault(p => p.Name == productListView.Name);
                 productDB.Moderation = true;
                 _dBSession.SaveChanges();
-                ListAddInfo();
+                NavigationService.Navigate(new PositionsMod(_dBSession));
             }
             else if(((Button)sender).DataContext is Models.Service services)
             {
@@ -56,10 +57,11 @@ namespace WpfApp1.Pages.Admin
                 var productDB = _dBSession.services.SingleOrDefault(p => p.Name == productListView.Name);
                 productDB.Moderation = true;
                 _dBSession.SaveChanges();
-                ListAddInfo();
+                NavigationService.Navigate(new PositionsMod(_dBSession));
             }
 
         }
+        //Подгрузка данных из бд
         public void ListAddInfo()
         {
 
