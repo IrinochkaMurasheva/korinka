@@ -22,19 +22,45 @@ namespace WpfApp1.Pages.Buyer
     public partial class Basket : Page
     {
         readonly DBSession _dBSession;
-        public Basket(DBSession dBSession)
+        public Models.Buyer _buyer;
+        public Basket(DBSession dBSession, Models.Buyer buyer)
         {
             InitializeComponent();
+            ListAddInfo();
+            _buyer = buyer;
         }
-
+        //сформировать заказ
         private void placeOrder_Click(object sender, RoutedEventArgs e)
         {
+            var status = _dBSession.status.Where(p => p.Name == "Новый");
+            Models.Order order = new Models.Order()
+            {
+                name = _dBSession.orders.Count() + "Order",
+                description = "",
+                address = "",
+                createdOrdersDate = DateTime.Now,
+                dileveryDate = DateTime.Parse(""),
+                Sum = 0
+            };
+            order.status= _dBSession.status.SingleOrDefault(p => p.Name == "Новый");
+            _dBSession.orders.Add(order);
+            _dBSession.SaveChanges();
 
         }
-
+        //возврат
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
+        }
+        //загрузка корзины
+        public void ListAddInfo()
+        {
+            var basket = _dBSession.baskets.Where(p => p.BuerId == _buyer.Id).ToList();
+            foreach (var b in basket)
+            {
+                listUsers.Items.Add(b);
+            }
+
         }
     }
 }

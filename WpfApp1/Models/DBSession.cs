@@ -27,6 +27,7 @@ namespace WpfApp1.Models
         public DbSet<Service> services { get; set; }
         public DbSet<Status> status { get; set; }
         public DbSet<Category> categories { get; set; }
+        public DbSet<Basket> baskets { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=master2;Trusted_Connection=True");

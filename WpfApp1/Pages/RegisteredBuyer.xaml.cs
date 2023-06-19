@@ -40,6 +40,7 @@ namespace WpfApp1.Pages
                 Password = Password.Text,
                 Phone = Phone.Text
             };
+            buyer.orders = new List<Order>();
             _dBSession.buyers.Add(buyer);
             _dBSession.SaveChanges();
             NavigationService.Navigate(new Login(_dBSession));
