@@ -39,7 +39,7 @@ namespace WpfApp1.Pages.Admin
         public void ListAddInfo()
         {
             var ordersSum = _dBSession.orders.Where(p => p.status.Name == "Отмена").ToList();
-            int sum = new int();
+            long sum = new int();
             foreach (var order in ordersSum)
             {
                 if (order.Sum != null)

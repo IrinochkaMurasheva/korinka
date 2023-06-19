@@ -9,7 +9,7 @@
       Title="Basket">
 
     <Grid>
-        <ListView x:Name="listUsers" Margin="10,10,10,55" Height="NaN">
+        <ListView x:Name="listUsers" Margin="10,10,10,122" Height="NaN">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Фото" Width="100">
@@ -24,11 +24,17 @@
                     <GridViewColumn Header="Позиция" Width="450" DisplayMemberBinding="{Binding name}"/>
                     <GridViewColumn Header="Кол-во" Width="100" DisplayMemberBinding="{Binding count}"/>
                     <GridViewColumn Header="Цена" Width="100" DisplayMemberBinding="{Binding price}"/>
-                   
+
                 </GridView>
             </ListView.View>
         </ListView>
         <Button Name="placeOrder" Content="оформить заказ" HorizontalAlignment="Left" Height="40" Margin="95,400,0,0" VerticalAlignment="Top" Width="250" Click="placeOrder_Click"/>
         <Button Name="Return" Content="Выход" HorizontalAlignment="Right" Height="40" Margin="0,400,100,0" VerticalAlignment="Top" Width="250" Click="Return_Click"/>
+        <TextBox Name="Adress" HorizontalAlignment="Left" Margin="261,371,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Description" HorizontalAlignment="Left" Margin="432,371,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="334"/>
+        <Label Content="Дата доставки" HorizontalAlignment="Left" Margin="132,342,0,0" VerticalAlignment="Top"/>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="283,342,0,0" VerticalAlignment="Top"/>
+        <Label Content="Комментарий" HorizontalAlignment="Left" Margin="532,342,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="DeliveryDate" HorizontalAlignment="Left" Margin="120,368,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

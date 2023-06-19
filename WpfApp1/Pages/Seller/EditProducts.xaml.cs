@@ -37,6 +37,7 @@ namespace WpfApp1.Pages.Seller
             var product = (Models.Product)((Button)sender).DataContext;
             NavigationService.Navigate(new EditProduct(_dBSession,_seller,product));
         }
+        //загрузка позицый
         public void ListAddInfo()
         {
 

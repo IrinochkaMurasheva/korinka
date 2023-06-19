@@ -21,21 +21,23 @@ namespace WpfApp1.Pages
     /// </summary>
     public partial class SelectionPageBuyer : Page
     {
+        readonly Models.Buyer buyer;
         readonly DBSession _dBSession;
-        public SelectionPageBuyer(DBSession dBSession)
+        public SelectionPageBuyer(DBSession dBSession, Models.Buyer buyer)
         {
-            _dBSession=dBSession;
+            _dBSession = dBSession;
             InitializeComponent();
+            this.buyer = buyer;
         }
 
         private void Services_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Services(_dBSession));
+            NavigationService.Navigate(new Services(_dBSession,buyer));
         }
 
         private void Basket_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Basket(_dBSession));
+            NavigationService.Navigate(new Buyer.Basket(_dBSession,buyer));
         }
 
         private void Orders_Click(object sender, RoutedEventArgs e)

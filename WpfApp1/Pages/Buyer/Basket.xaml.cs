@@ -32,25 +32,30 @@ namespace WpfApp1.Pages.Buyer
         //сформировать заказ
         private void placeOrder_Click(object sender, RoutedEventArgs e)
         {
+            var basket=_dBSession.baskets.SingleOrDefault(p=>p.BuerId == _buyer.Id);
             var status = _dBSession.status.Where(p => p.Name == "Новый");
             Models.Order order = new Models.Order()
             {
                 name = _dBSession.orders.Count() + "Order",
-                description = "",
-                address = "",
+                description = Description.Text,
+                address = Adress.Text,
                 createdOrdersDate = DateTime.Now,
-                dileveryDate = DateTime.Parse(""),
-                Sum = 0
+                dileveryDate = DateTime.Parse(DeliveryDate.Text)
             };
+            foreach(var position in basket.products)
+            {
+                order.Sum += position.Price;
+            }
             order.status= _dBSession.status.SingleOrDefault(p => p.Name == "Новый");
             _dBSession.orders.Add(order);
+            _dBSession.Remove(basket);
             _dBSession.SaveChanges();
 
         }
         //возврат
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SelectionPageBuyer(_dBSession));
+            NavigationService.Navigate(new SelectionPageBuyer(_dBSession,_buyer));
         }
         //загрузка корзины
         public void ListAddInfo()

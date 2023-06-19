@@ -43,7 +43,7 @@ namespace WpfApp1.Pages
             {
                 if (BoxPassword.Text == buyer.Password)
                 { 
-                    NavigationService.Navigate(new SelectionPageBuyer(_dBSession)); 
+                    NavigationService.Navigate(new SelectionPageBuyer(_dBSession,buyer)); 
                 }
                 else
                     MessageBox.Show("Неправильный пароль!");
