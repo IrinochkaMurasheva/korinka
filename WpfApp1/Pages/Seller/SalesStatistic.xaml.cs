@@ -31,11 +31,12 @@ namespace WpfApp1.Pages.Seller
             InitializeComponent();
             _seller = seller;
         }
-
+        //возврат
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SelectionPageSeller(_dBSession, _seller));
         }
+        //загрузка статистики
         public void StatisticLoad()
         {
             var services = _seller.Services.ToList();

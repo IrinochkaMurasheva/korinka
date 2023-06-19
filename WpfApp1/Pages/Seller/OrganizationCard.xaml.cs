@@ -31,12 +31,12 @@ namespace WpfApp1.Pages
             InitializeComponent();
             loadCard();
         }
-
+        //возврат на предыдущую страницу
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SelectionPageSeller(_dBSession,_Seller));
         }
-
+        //сохранить данные
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             _Seller.Name = OrganizationName.Text;
@@ -46,6 +46,7 @@ namespace WpfApp1.Pages
             _Seller.Password = OrganizationPassword.Text;
             _dBSession.SaveChanges();
         }
+        //загрузить данные
         public void loadCard()
         {
             OrganizationName.Text=_Seller.Name;

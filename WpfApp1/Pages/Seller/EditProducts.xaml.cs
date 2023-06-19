@@ -29,11 +29,25 @@ namespace WpfApp1.Pages.Seller
             _dBSession = dBSession;
             InitializeComponent();
             _seller = seller;
+            ListAddInfo();
         }
-
+        //редактирование продукта
         private void EditCategory(object sender, RoutedEventArgs e)
         {
+            var product = (Models.Product)((Button)sender).DataContext;
+            NavigationService.Navigate(new EditProduct(_dBSession,_seller,product));
+        }
+        public void ListAddInfo()
+        {
 
+            if (_dBSession != null)
+            {
+                var products = _dBSession.products.Where(p=>p.SellerId==_seller.Id).ToList();
+                foreach (var product in products)
+                {
+                    listUsers.Items.Add(product);
+                }
+            }
         }
     }
 }

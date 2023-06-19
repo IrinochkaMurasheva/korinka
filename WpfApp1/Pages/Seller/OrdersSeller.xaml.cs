@@ -29,12 +29,49 @@ namespace WpfApp1.Pages
             _dBSession = dBSession;
             InitializeComponent();
             _seller = seller;
+            ListAddInfo();
         }
-
+        //возврат в меню
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SelectionPageSeller(_dBSession,_seller));
 
+        }
+        //загрузка заказов
+        public void ListAddInfo()
+        {
+
+            if (_dBSession != null)
+            {
+                List<int> productId=new List<int>();
+                List<Order> orders = new List<Order>();
+                var ordersDB = _dBSession.orders.ToList();
+                
+                var services = _dBSession.services.Where(p => p.SellerId == _seller.Id).ToList();
+                foreach(var s in services)
+                {
+                    productId.Add(s.Id);
+                }
+                var positions=_dBSession.products.Where(p=>p.SellerId==_seller.Id).ToList();
+                foreach (var p in positions)
+                {
+                    productId.Add(p.Id);
+                }
+                foreach (Order order in ordersDB)
+                {
+                    foreach (var position in order.products)
+                    {
+                        if(productId.Contains(position.Id))
+                        {
+                            orders.Add(order);
+                        }
+                    }
+                }
+                foreach (var order in orders)
+                {
+                    listUsers.Items.Add(order);
+                }
+            }
         }
     }
 }

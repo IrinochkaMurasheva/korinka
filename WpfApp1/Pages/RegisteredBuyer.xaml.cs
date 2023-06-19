@@ -18,7 +18,7 @@ using WpfApp1.Pages.Seller;
 namespace WpfApp1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для RegisteredBuyer.xaml
+    /// Страница регистрации покупателей
     /// </summary>
     public partial class RegisteredBuyer : Page
     {
@@ -29,7 +29,7 @@ namespace WpfApp1.Pages
             InitializeComponent();
             
         }
-
+        //создание покупателя
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             Models.Buyer buyer = new Models.Buyer()
@@ -44,7 +44,7 @@ namespace WpfApp1.Pages
             _dBSession.SaveChanges();
             NavigationService.Navigate(new Login(_dBSession));
         }
-
+        //возврат
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Login(_dBSession));

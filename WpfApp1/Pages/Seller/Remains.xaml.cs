@@ -17,7 +17,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Remains.xaml
+    /// Просмотр остатков
     /// </summary>
     public partial class Remains : Page
     {
@@ -29,6 +29,28 @@ namespace WpfApp1.Pages
             _dBSession = dBSession;
             InitializeComponent();
             _seller = seller;
+        }
+        //загрузка остатков
+        public void ListAddInfo()
+        {
+
+            if (_dBSession != null)
+            {
+                
+
+                var services = _dBSession.services.Where(p => p.SellerId == _seller.Id).ToList();
+                
+                var positions = _dBSession.products.Where(p => p.SellerId == _seller.Id).ToList();
+                
+                foreach (var service in services)
+                {
+                    listUsers.Items.Add(service);
+                }
+                foreach (var position in positions)
+                {
+                    listUsers.Items.Add(position);
+                }
+            }
         }
     }
 }

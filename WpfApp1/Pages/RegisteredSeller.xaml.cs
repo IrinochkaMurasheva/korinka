@@ -17,7 +17,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для RegisteredSeller.xaml
+    /// Регистрация продавцов
     /// </summary>
     public partial class RegisteredSeller : Page
     {
@@ -27,7 +27,7 @@ namespace WpfApp1.Pages
             _dBSession = dBSession;
             InitializeComponent();
         }
-
+        //создание продавца
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             Models.Seller seller = new Models.Seller()
@@ -42,7 +42,7 @@ namespace WpfApp1.Pages
             _dBSession.SaveChanges();
             NavigationService.Navigate(new Login(_dBSession));
         }
-
+        //возврат
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Login(_dBSession));
