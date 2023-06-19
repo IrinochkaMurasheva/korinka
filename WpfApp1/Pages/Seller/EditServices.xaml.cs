@@ -29,7 +29,7 @@ namespace WpfApp1.Pages.Seller
             _dBSession = dBSession;
             InitializeComponent();
             _seller = seller;
-            ListAddInfo()
+            ListAddInfo();
         }
         //редактировать выбранную позицыю
         private void EditCategory(object sender, RoutedEventArgs e)

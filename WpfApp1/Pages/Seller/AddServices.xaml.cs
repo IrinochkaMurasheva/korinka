@@ -40,7 +40,7 @@ namespace WpfApp1.Pages
                 Description = DescriptionService.Text,
                 Moderation = false,
                 Visibly = false,
-                BuyerId = _seller.Id
+                SellerId = _seller.Id
             };
             service.category = _dBSession.categories.SingleOrDefault(p => p.Name == CategoryBox.Name);
             _dBSession.services.Add(service);
