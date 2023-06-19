@@ -38,7 +38,8 @@ namespace WpfApp1.Pages
                 Description = DescriptionProduct.Text,
                 Path = ProductPath.Text,
                 Moderation = false,
-                Visibly = false
+                Visibly = false,
+                BuyerId=_Seller.Id
             };
             var categoru=_dBSession.categories.SingleOrDefault(p => p.Name == CategoryBox.Text);
             product.Category = categoru;
