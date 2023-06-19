@@ -9,7 +9,7 @@ using WpfApp1.Models;
 namespace WpfApp1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddProduct.xaml
+    /// Логика заполнения карточки товара
     /// </summary>
     public partial class AddProduct : Page
     {
@@ -22,7 +22,11 @@ namespace WpfApp1.Pages
             addCategoryBox();
             _Seller = seller;
         }
-
+        /// <summary>
+        /// Сохранение данных введеных в UI
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Save_Click(object sender, RoutedEventArgs e)
         {
 
@@ -43,12 +47,13 @@ namespace WpfApp1.Pages
             MessageBox.Show("Добавлен товар.");
             NavigationService.Navigate(new SelectionPageSeller(_dBSession, _Seller));
         }
-
+        //Перенаправление на прошлую страницу
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SelectionPageSeller(_dBSession,_Seller));
         }
         
+        //загрузка категорий из БД
         public void addCategoryBox()
         {
             var categories = _dBSession.categories.ToList();

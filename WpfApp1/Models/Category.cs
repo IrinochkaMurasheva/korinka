@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    //Класс создания категории
     public class Category
     {
         public int Id { get; set; }

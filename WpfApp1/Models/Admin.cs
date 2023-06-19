@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    //Клас создания администратора
     public class Admin
     {
         public int Id { get; set; }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    //Класс создания продуктов
     public class Product
     {
         public int Id { get; set; } 

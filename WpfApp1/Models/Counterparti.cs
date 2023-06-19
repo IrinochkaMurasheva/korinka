@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    //Абстрактный класс контрагента
     public abstract class Counterparti
     {
         public int Id { get; set; }

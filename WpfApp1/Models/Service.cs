@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    //Клас создания услуг
     public class Service
     {
         public int Id { get; set; }
@@ -16,5 +17,6 @@ namespace WpfApp1.Models
         public bool Visibly { get; set; } 
         public int? CategoryId { get; set; }
         public bool Moderation { get; set; }    
+        public Category category { get; set; }
     }
 }

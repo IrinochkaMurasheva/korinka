@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    //Клас подключения к БД
     public class DBSession : DbContext
     {
 

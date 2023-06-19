@@ -17,6 +17,8 @@
         <TextBox Name="DescriptionService" HorizontalAlignment="Center" Margin="0,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
         <Button Name="Save" Content="Сохранить" HorizontalAlignment="Left" Margin="220,350,0,0" VerticalAlignment="Top" Width="65" Click="Save_Click" />
         <Button Name="Return" Content="Назад" HorizontalAlignment="Left" Margin="520,350,0,0" VerticalAlignment="Top" Width="65" Click="Return_Click"/>
+        <Label Content="Категория" HorizontalAlignment="Center" Margin="0,223,0,0" VerticalAlignment="Top" Width="64" />
+        <ComboBox x:Name="CategoryBox" HorizontalAlignment="Center" Margin="0,254,0,0" VerticalAlignment="Top" Width="200"/>
 
     </Grid>
 </Page>

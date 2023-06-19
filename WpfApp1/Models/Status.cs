@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    //Клас создания статусов
     public class Status
     {
         public int Id { get; set; }

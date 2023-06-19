@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    //Класс создания покупателя
     public class Buyer : Counterparti
     {
         public string? Surname { get; set; }
